@@ -28,7 +28,7 @@ body {
 
     ul.navbar li {
         float: left;
-        font-size: small;
+
     }
 
     
@@ -68,10 +68,25 @@ body {
     object-fit: cover;
     border-radius: 20px;
 }
+.intro {
+    margin-top: 70px;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 40%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: large;
+}
 
+.intro text{
+    font-size: large;
+}
 
 .solution {
-    margin-top: 70px;
+    margin: 20px;
     background-color: #fff;
     border-radius: 10px;
     width: 40%;
@@ -128,6 +143,7 @@ body {
 /* CSS styles for the links */
 .links {
     display: inline-block;
+    margin: 10px;
     padding: 20px;
     background-color: #f2f2f2;
     border-radius: 10px;

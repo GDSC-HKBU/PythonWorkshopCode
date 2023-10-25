@@ -1,55 +1,72 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Word Count</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        .input-container {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 20px;
-        }
-
-        .input-container label {
-            margin-bottom: 5px;
-        }
-
-        .input-container input[type="file"] {
-            margin-top: 5px;
-        }
-
-        .word-count {
-            font-size: 24px;
-            margin-top: 20px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Python Workshop</title>
 </head>
+<body>
+
+
+    <ul class="navbar">
+        <li><a href="#home">
+            <img src="{{ url_for('static', filename='gdsc.png') }}">
+        </a></li>
+        <li><a href="/">Workshop Home</a></li>
+        <li><a href="https://gdsc.community.dev/hong-kong-baptist-university/">Contact</a></li>
+    </ul>
+
+
+
+    <div class="banner">
+        <img src="{{ url_for('static', filename='banner.webp') }}" alt="">
+    </div>
+
+
+
+
+
+    <div class="solution">
+        <h3>Reverse the String!</h3>
+        <span>Implement the function at `${codeFolder}/functions/temp.py` to see the magic!</span>
+        <div class="form-container">
+            <form  method="POST">
+              <label class="form-label" for="name">Name:</label>
+              <input class="form-input" type="text" id="name" name="name">
+          
+              <label class="form-label" for="email">Email:</label>
+              <input class="form-input" type="email" id="email" name="email">
+          
+              <label class="form-label" for="message">Message:</label>
+              <textarea class="form-input" id="message" name="message"></textarea>
+          
+              <input class="form-submit" type="submit" value="Submit">
+            </form>
+        </div>
+
+        {% if result %}
+        <div class="result-container">
+            <div class="inputs">
+                <p>Input:</p>
+            </div>
+            <div class="results">
+                <p>Result:</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+
+
+
+
+    
+</body>
+</html>
 
 <body>
-    <div><a href="/">Go to Homepage</a></div>
+    
 
     <form method="POST" action="/countWords" enctype="multipart/form-data">
         <div class="container">
