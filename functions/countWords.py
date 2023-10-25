@@ -8,5 +8,5 @@ yoU ARE GIVEN A STRING. Your task is to count all the words in stringYou should 
 
 
 def count_words(text):
-    words = text.split()
-    return len(words)
+    # Write your solution code here
+    pass

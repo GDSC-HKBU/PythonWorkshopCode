@@ -15,4 +15,5 @@ Return: The average of the input numbers.
 """
 
 def average(numbers):
+    # Write your solution code here
     pass
