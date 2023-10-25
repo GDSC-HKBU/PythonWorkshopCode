@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Python Workshop</title>
+</head>
+<body>
+
+
+    <ul class="navbar">
+        <li><a href="#home">
+            <img src="{{ url_for('static', filename='gdsc.png') }}">
+        </a></li>
+        <li><a href="/">Workshop Home</a></li>
+        <li><a href="https://gdsc.community.dev/hong-kong-baptist-university/">Contact</a></li>
+    </ul>
+
+
+
+    <div class="banner">
+        <img src="{{ url_for('static', filename='banner.webp') }}" alt="">
+    </div>
+
+
+
+
+
+    <div class="solution">
+        <h3>Compute factorials!</h3>
+        <span>Implement the function at `${codeFolder}/functions/factorial.py` to see the magic!</span>
+        <a href="https://en.wikipedia.org/wiki/Factorial">Dont know what a factorial is?</a>
+        <div class="form-container">
+            <form>
+              <label class="form-label" for="name">Factorial of ... :</label>
+              <input class="form-input" type="number" id="input" name="input">
+          
+              <input class="form-submit" type="submit" value="Submit">
+            </form>
+        </div>
+
+        {% if result %}
+        <div class="result-container">
+            <div class="inputs">
+                <p>Input:</p>
+            </div>
+            <div class="results">
+                <p>Result:</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+
+
+
+
+    
+</body>
+</html>

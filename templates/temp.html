@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Python Workshop</title>
+</head>
+<body>
+
+
+    <ul class="navbar">
+        <li><a href="#home">
+            <img src="{{ url_for('static', filename='gdsc.png') }}">
+        </a></li>
+        <li><a href="/">Workshop Home</a></li>
+        <li><a href="https://gdsc.community.dev/hong-kong-baptist-university/">Contact</a></li>
+    </ul>
+
+
+
+    <div class="banner">
+        <img src="{{ url_for('static', filename='banner.webp') }}" alt="">
+    </div>
+
+
+
+
+
+    <div class="solution">
+        <h3>Reverse the String!</h3>
+        <span>Implement the function at `${codeFolder}/functions/temp.py` to see the magic!</span>
+        <div class="form-container">
+            <form>
+              <label class="form-label" for="name">Name:</label>
+              <input class="form-input" type="text" id="name" name="name">
+          
+              <label class="form-label" for="email">Email:</label>
+              <input class="form-input" type="email" id="email" name="email">
+          
+              <label class="form-label" for="message">Message:</label>
+              <textarea class="form-input" id="message" name="message"></textarea>
+          
+              <input class="form-submit" type="submit" value="Submit">
+            </form>
+        </div>
+
+        {% if result %}
+        <div class="result-container">
+            <div class="inputs">
+                <p>Input:</p>
+            </div>
+            <div class="results">
+                <p>Result:</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+
+
+
+
+    
+</body>
+</html>

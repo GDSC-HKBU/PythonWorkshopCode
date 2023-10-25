@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Python Workshop</title>
+</head>
+<body>
+
+
+    <ul class="navbar">
+        <li><a href="#home">
+            <img src="{{ url_for('static', filename='gdsc.png') }}">
+        </a></li>
+        <li><a href="/">Workshop Home</a></li>
+        <li><a href="https://gdsc.community.dev/hong-kong-baptist-university/">Contact</a></li>
+    </ul>
+
+
+
+    <div class="banner">
+        <img src="{{ url_for('static', filename='banner.webp') }}" alt="">
+    </div>
+
+
+
+
+
+    <div class="solution">
+        <h3>Average of Numbers!</h3>
+        <span>Implement the function at `${codeFolder}/functions/average.py` to see the magic!</span>
+        <div class="form-container">
+            <form method="POST">
+              <label class="form-label" for="message">Input "space separated numbers" to calculate their average:</label>
+              <textarea class="form-input" id="input" name="input"></textarea>
+          
+              <input class="form-submit" type="submit" value="Submit">
+            </form>
+        </div>
+
+        {% if result %}
+        <div class="result-container">
+            <div class="inputs">
+                <p>Input: {{ input }}</p>
+            </div>
+            <div class="results">
+                <p>Result: {{ result }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+
+
+
+
+    
+</body>
+</html>

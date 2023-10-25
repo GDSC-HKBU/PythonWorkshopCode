@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Word Count</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .input-container label {
+            margin-bottom: 5px;
+        }
+
+        .input-container input[type="file"] {
+            margin-top: 5px;
+        }
+
+        .word-count {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div><a href="/">Go to Homepage</a></div>
+
+    <form method="POST" action="/countWords" enctype="multipart/form-data">
+        <div class="container">
+            <h1>Word Count</h1>
+            <div class="input-container">
+                <label for="text">Enter Text:</label>
+                <input type="text" id="text" name="text" />
+            </div>
+            <div class="input-container">
+                <label for="file">Upload .txt File:</label>
+                <input type="file" id="file" name="file" accept=".txt" />
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+            <div>
+                {% if text %}
+                Analysing text: {{ text }}
+                {% endif %}
+
+                {% if file %}
+                File Uploaded Succesfull: {{ file }}
+                {% endif %}
+
+
+            </div>
+            <div class="word-count">
+                {% if word_count %}
+                Word Count: {{ word_count }}
+                {% endif %}
+            </div>
+        </div>
+
+    </form>
+</body>
+
+</html>
