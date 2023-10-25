@@ -15,10 +15,4 @@ Return: The average of the input numbers.
 """
 
 def average(numbers):
-    sum = 0
-    count = 0
-    for n in numbers:
-        sum += n
-        count += 1
-
-    return sum/count
+    pass

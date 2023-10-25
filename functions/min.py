@@ -14,6 +14,6 @@ Output: A number (the minimum number).
 Return: The minimum number in the input list.
 """
 
-def find_max(numbers):
+def min(numbers):
     # Write your solution code here
     pass

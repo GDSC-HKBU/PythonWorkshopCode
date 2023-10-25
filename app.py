@@ -2,6 +2,14 @@ from flask import Flask, render_template, request
 from functions.countWords import count_words
 from functions.login import login
 from functions.average import average
+from functions.average import average
+from functions.max import max
+from functions.min import min
+from functions.reverse_string import reverse
+from functions.palindrome import palindrome
+from functions.factorial import factorial
+from functions.count_occurrences import count_occurrences
+
 
 
 app = Flask(__name__)
@@ -39,10 +47,7 @@ def averageRouter():
     if request.method == 'POST':
 
         input = request.form["input"]
-        print(input)
-        inputList = []
-        for n in input.split():
-            inputList.append(int(n))
+        inputList = [int(n) for n in input.split()]
         
         result = average(inputList)
             
@@ -53,120 +58,63 @@ def averageRouter():
 @app.route('/max', methods=['GET', 'POST'])
 def maxRouter():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        
-        # Implement your login logic here
-        # Check if the provided username and password are valid
-        
-        if login(username, password):
-            message = 'Login successful'
-            message_class = 'success'
-        else:
-            message = 'Login failed'
-            message_class = 'failure'
+        input = request.form["input"]
+        inputList = [int(n) for n in input.split()]
+        result = max(inputList)
             
-        return render_template('max.html', message=message, message_class=message_class)
+        return render_template('max.html', result=result, input = input)
     
     return render_template('max.html')
 
 @app.route('/min', methods=['GET', 'POST'])
 def minRouter():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        
-        # Implement your login logic here
-        # Check if the provided username and password are valid
-        
-        if login(username, password):
-            message = 'Login successful'
-            message_class = 'success'
-        else:
-            message = 'Login failed'
-            message_class = 'failure'
+        input = request.form["input"]
+        inputList = [int(n) for n in input.split()]
+        result = min(inputList)
             
-        return render_template('min.html', message=message, message_class=message_class)
+        return render_template('min.html', result=result, input = input)
     
     return render_template('min.html')
 
 @app.route('/factorial', methods=['GET', 'POST'])
 def factorialRouter():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        
-        # Implement your login logic here
-        # Check if the provided username and password are valid
-        
-        if login(username, password):
-            message = 'Login successful'
-            message_class = 'success'
-        else:
-            message = 'Login failed'
-            message_class = 'failure'
+        input = request.form["input"]
+        result = factorial(int(input))
             
-        return render_template('factorial.html', message=message, message_class=message_class)
+        return render_template('factorial.html', result=result, input = input)
     
     return render_template('factorial.html')
 
 @app.route('/palindrome', methods=['GET', 'POST'])
 def palindromeRouter():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        
-        # Implement your login logic here
-        # Check if the provided username and password are valid
-        
-        if login(username, password):
-            message = 'Login successful'
-            message_class = 'success'
-        else:
-            message = 'Login failed'
-            message_class = 'failure'
+        input = request.form["input"]
+        result = palindrome(input)
             
-        return render_template('palindrome.html', message=message, message_class=message_class)
+        return render_template('palindrome.html', result=result, input = input)
     
     return render_template('palindrome.html')
 
 @app.route('/reverse', methods=['GET', 'POST'])
 def reverseRouter():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        
-        # Implement your login logic here
-        # Check if the provided username and password are valid
-        
-        if login(username, password):
-            message = 'Login successful'
-            message_class = 'success'
-        else:
-            message = 'Login failed'
-            message_class = 'failure'
+        input = request.form["input"]
+        result = reverse(input)
             
-        return render_template('reverse.html', message=message, message_class=message_class)
+        return render_template('reverse.html', result=result, input = input)
     
     return render_template('reverse.html')
 
 @app.route('/count_occurrences', methods=['GET', 'POST'])
 def countOccurrencesRouter():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        
-        # Implement your login logic here
-        # Check if the provided username and password are valid
-        
-        if login(username, password):
-            message = 'Login successful'
-            message_class = 'success'
-        else:
-            message = 'Login failed'
-            message_class = 'failure'
+        input = request.form["input"]
+        inputList = input.split()
+        result = count_occurrences(inputList)
             
-        return render_template('count_occurrences.html', message=message, message_class=message_class)
+        return render_template('count_occurrences.html', result=result, input = input)
     
     return render_template('count_occurrences.html')
 

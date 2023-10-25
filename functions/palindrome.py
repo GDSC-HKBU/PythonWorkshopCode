@@ -14,6 +14,6 @@ Output: Boolean (True if the string is a palindrome, False otherwise).
 Return: None.
 """
 
-def is_palindrome(string):
+def palindrome(string):
     # Write your solution code here
     pass

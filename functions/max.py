@@ -14,6 +14,6 @@ Output: A number (the maximum number).
 Return: The maximum number in the input list.
 """
 
-def find_max(numbers):
+def max(numbers):
     # Write your solution code here
     pass

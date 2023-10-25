@@ -71,19 +71,16 @@ body {
 
 
 .solution {
-    margin-top: 50px;
+    margin-top: 70px;
     background-color: #fff;
     border-radius: 10px;
-    width: 50%;
+    width: 40%;
     min-height: 300px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
 }
 
 
-.solution span{
-    font-size: small;
-}
 
 
 

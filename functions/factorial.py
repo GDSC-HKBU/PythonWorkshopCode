@@ -14,6 +14,6 @@ Output: Integer.
 Return: The factorial of the input number.
 """
 
-def calculate_factorial(n):
+def factorial(n):
     # Write your solution code here
     pass

@@ -14,6 +14,6 @@ Output: String.
 Return: The reverse of the input string.
 """
 
-def reverse_string(string):
+def reverse(string):
     # Write your solution code here
     pass
